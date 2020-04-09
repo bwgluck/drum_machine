@@ -1,0 +1,78 @@
+$padWidth: 100px;
+$padHeight: 80px;
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  user-select: none;
+}
+
+.inner-container {
+  outline: 5px solid orange;
+  width: 720px;
+  text-align: center;
+  .pad-bank {
+    width: $padWidth * 3 + 32;
+    height: $padHeight * 3 + 32;
+    display: inline-block;
+    margin: 20px;
+    .drum-pad {
+      position: relative;
+      float: left;
+      width: $padWidth;
+      height: $padHeight;
+      margin-right: 10px;
+      border-radius: 5px;
+      padding-top: 35px;
+      box-sizing: border-box;
+    }
+  }
+  .controls-container {
+    width: 240px;
+    height: $padHeight * 3 + 32;
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+    .control {
+      width: 100px;
+      margin: auto;
+      p {
+        margin-bottom: 0;
+      }
+      .select {
+      @extend .outer-select;
+        .inner {
+          @extend .inner-select;
+        }
+      }
+    }
+    .screen {
+      width: 200px;
+      background-color: gray;
+      margin: 15px auto;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.outer-select {
+  margin: auto;
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+  padding: 1px;
+  background-color: black;
+}
+
+.inner-select {
+  width: 23px;
+  height: 19px;
+  background: blue;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+
